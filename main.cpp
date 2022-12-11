@@ -13,7 +13,7 @@ int hits = 0, misses = 0, accesses = 0, sets, d, i;
 int cache_cycles;
 char cache_org;
 const int miss_penalty = 100;
-vector<vector<pair<bool, int>>> cache[2]; // 0: instruction, 1: data 
+vector<vector<pair<bool, unsigned int>>> cache[2]; // 0: instruction, 1: data 
 ifstream fin;
 ofstream fout;
 
@@ -109,7 +109,7 @@ void read_input() {
     fout.open(file);
 }
 
-void print_output(bool type, int address) {
+void print_output(bool type, unsigned int address) {
     if (type) fout << "Data Access with Address " << address << "\n";
     else fout << "Instruction Acess with Address " << address << "\n";
 
@@ -133,16 +133,16 @@ void print_output(bool type, int address) {
 }
 
 void simulator() {
-    cache[0] = cache[1] = vector<vector<pair<bool, int>>> (sets, vector<pair<bool, int>>(m));
+    cache[0] = cache[1] = vector<vector<pair<bool, unsigned int>>> (sets, vector<pair<bool, unsigned int>>(m));
     bool is_data;
 
-    char type; int address;
+    char type; unsigned int address;
     while (fin >> type >> address) {
         accesses++;
         if (type == 'd')  is_data = 1;
         else is_data = 0;
 
-        int index = (address >> d) % sets, tag = (address >> d) >> i;
+        unsigned int index = (address >> d) % sets, tag = (address >> d) >> i;
 
         int cur_pos;
         for (cur_pos = 0; cur_pos < m; cur_pos++) {
