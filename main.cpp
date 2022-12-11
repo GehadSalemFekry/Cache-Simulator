@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <fstream>
 #include <vector>
 #include <math.h>
@@ -11,14 +12,24 @@ int m; // m is the number of lines per set (associativity level)
 int hits = 0, misses = 0, accesses = 0, sets, d, i;
 int cache_cycles;
 char cache_org;
+const int miss_penalty = 100;
 vector<vector<pair<bool, int>>> cache[2]; // 0: instruction, 1: data 
 ifstream fin;
-
-
-#define mario cout << "Hi";
+ofstream fout;
 
 bool is_power_two(int n) {
-    return (n & (n - 1) == 0);
+    return (n & (n - 1)) == 0;
+}
+
+string to_binary(int n) {
+    string ans = "";
+    if (n == 0) return "0";
+    while (n) {
+        ans += (n % 2 + '0');
+        n /= 2;
+    }
+    reverse(ans.begin(), ans.end());
+    return ans;
 }
 
 bool is_valid_cache_line_size(int cache_size, int line_size) {
@@ -92,26 +103,33 @@ void read_input() {
         cin >> file;
         fin.open(file);
     }
+
+    cout << "Please enter the file you want to have the output in.\n";
+    cin >> file;
+    fout.open(file);
 }
 
-void print_output() {
+void print_output(bool type, int address) {
+    if (type) fout << "Data Access with Address " << address << "\n";
+    else fout << "Instruction Acess with Address " << address << "\n";
+
     for (int i = 0; i < 2; i++) {
         if (i == 0) 
-            cout << "---------------------- Instructions Cache Information: -------------------------\n";
+            fout << "---------------------- Instructions Cache Information: -------------------------\n";
         else 
-            cout << "------------------------- Data Cache Information: ------------------------------\n";
-        cout << "Valid Bit" << "\t" << "Tag" << "\t" << "Index" << "\n";
+            fout << "------------------------- Data Cache Information: ------------------------------\n";
+        fout << "Valid Bit" << "\t" << "Tag" << "\t\t" << "Index" << "\n";
         for (int j = 0; j < sets; j++) 
             for (int k = 0; k < m; k++)
-                cout << cache[i][j][k].first << "\t" << cache[i][j][k].second  << "\t" << j << "\n";
+                fout << cache[i][j][k].first << "\t\t\t" << to_binary(cache[i][j][k].second)  << "\t\t" << j << "\n";
     }
 
-    cout << "--------------------------------------------------------------------------------\n";
-    cout << "Total Accesses are: " << accesses << "\n";
-    cout << "The Hit ratio is: " << (db)hits / accesses << "\n";
-    cout << "The Miss Ratio is: " << (db)misses / accesses << "\n";
-    cout << "The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: " << cache_cycles + ((db)misses / accesses) * 100 << "\n";
-    cout << "--------------------------------------------------------------------------------\n";
+    fout << "--------------------------------------------------------------------------------\n";
+    fout << "Total Accesses are: " << accesses << "\n";
+    fout << "The Hit ratio is: " << (db)hits / accesses << "\n";
+    fout << "The Miss Ratio is: " << (db)misses / accesses << "\n";
+    fout << "The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: " << cache_cycles + ((db)misses / accesses) * miss_penalty << "\n";
+    fout << "--------------------------------------------------------------------------------\n";
 }
 
 void simulator() {
@@ -143,7 +161,7 @@ void simulator() {
             cache[is_data][index][cur_pos] = {1, tag};
         }
 
-        print_output();
+        print_output(type, address);
     }
 }
 

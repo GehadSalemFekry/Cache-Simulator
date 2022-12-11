@@ -1,0 +1,216 @@
+Data Access with Address 22
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 1
+The Hit ratio is: 0
+The Miss Ratio is: 1
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 105
+--------------------------------------------------------------------------------
+Data Access with Address 26
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+1			11		2
+0			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 2
+The Hit ratio is: 0
+The Miss Ratio is: 1
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 105
+--------------------------------------------------------------------------------
+Data Access with Address 22
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+1			11		2
+0			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 3
+The Hit ratio is: 0.333333
+The Miss Ratio is: 0.666667
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 71.6667
+--------------------------------------------------------------------------------
+Data Access with Address 26
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+1			11		2
+0			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 4
+The Hit ratio is: 0.5
+The Miss Ratio is: 0.5
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 55
+--------------------------------------------------------------------------------
+Data Access with Address 16
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+1			10		0
+0			0		1
+1			11		2
+0			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 5
+The Hit ratio is: 0.4
+The Miss Ratio is: 0.6
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 65
+--------------------------------------------------------------------------------
+Data Access with Address 3
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+1			10		0
+0			0		1
+1			11		2
+1			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 6
+The Hit ratio is: 0.333333
+The Miss Ratio is: 0.666667
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 71.6667
+--------------------------------------------------------------------------------
+Data Access with Address 16
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+1			10		0
+0			0		1
+1			11		2
+1			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 7
+The Hit ratio is: 0.428571
+The Miss Ratio is: 0.571429
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 62.1429
+--------------------------------------------------------------------------------
+Data Access with Address 18
+---------------------- Instructions Cache Information: -------------------------
+Valid Bit	Tag		Index
+1			10		0
+0			0		1
+1			10		2
+1			0		3
+0			0		4
+0			0		5
+1			10		6
+0			0		7
+------------------------- Data Cache Information: ------------------------------
+Valid Bit	Tag		Index
+0			0		0
+0			0		1
+0			0		2
+0			0		3
+0			0		4
+0			0		5
+0			0		6
+0			0		7
+--------------------------------------------------------------------------------
+Total Accesses are: 8
+The Hit ratio is: 0.375
+The Miss Ratio is: 0.625
+The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: 67.5
+--------------------------------------------------------------------------------
