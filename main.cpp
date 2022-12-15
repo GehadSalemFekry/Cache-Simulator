@@ -50,7 +50,7 @@ bool is_valid_associativity(int associativity) {
     else if (!is_power_two(associativity))
         cout << "The associativity level  have to be powers of 2, please try again!\n";
     else if (associativity > s / l) 
-        cout << "The associtivity level has to be less than or equal number of lines in the cache, please try again!\n";
+        cout << "The associativity level has to be less than or equal number of lines in the cache, please try again!\n";
     else return true;
 
     return false;
@@ -128,19 +128,17 @@ void print_output(bool type, unsigned int address) {
     fout << "Total Accesses are: " << accesses << "\n";
     fout << "The Hit ratio is: " << (db)hits / accesses << "\n";
     fout << "The Miss Ratio is: " << (db)misses / accesses << "\n";
-    fout << "The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: " << cache_cycles + ((db)misses / accesses) * miss_penalty << "\n";
+    fout << "The Average Memory Access Time (AMAT) of the memory hierarchy (in cycles) is: " << (db)(hits * cache_cycles + misses * (cache_cycles + miss_penalty))/ accesses << "\n";
     fout << "--------------------------------------------------------------------------------\n";
 }
 
 void simulator() {
     cache[0] = cache[1] = vector<vector<pair<bool, unsigned int>>> (sets, vector<pair<bool, unsigned int>>(m));
-    bool is_data;
-
-    char type; unsigned int address;
-    while (fin >> type >> address) {
+    bool is_data; unsigned int address;
+    while (fin >> is_data >> address) {
         accesses++;
-        if (type == 'd')  is_data = 1;
-        else is_data = 0;
+        // if (type == 'd')  is_data = 1;
+        // else is_data = 0;
 
         unsigned int index = (address >> d) % sets, tag = (address >> d) >> i;
 
@@ -161,7 +159,7 @@ void simulator() {
             cache[is_data][index][cur_pos] = {1, tag};
         }
 
-        print_output(type, address);
+        print_output(is_data, address);
     }
 }
 
